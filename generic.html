@@ -1,0 +1,575 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sam Valdez Portfolio - Breakdown Process</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Exploration</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li class="active"><a href="generic.html">Breakdown Process</a></li>
+							<li><a href="aboutme.html">about me</a></li>
+							<!--<li><a href="elements.html">About Me</a></li>-->
+						</ul>
+						<ul class="icons">
+							<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
+							<li><a href="https://www.linkedin.com/in/svaldezruiz/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://www.instagram.com/swamillion/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/svaldezruiz" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+						<article class="post featured">
+							<header class="major">
+								
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<!--<span class="date">April 24, 2017</span>!-->
+										<h3><a href="">Installing and loading necessary packages<br />
+											</a></h3>
+									<!--</header>
+									<a href="https://github.com/svaldezruiz/data-portfolio/blob/main/Cyclistic%20Project%20Data%20Cleaning.R" class="image aln-center"><img src="images/pic02.jpg" width="444" height= "auto"alt="" /></a>
+									<p>In this project I used RStudio to explore and clean data from Cyclistic. </p>
+									<ul class="actions special">-->
+<pre>
+<code>install.packages("tidyverse")
+install.packages("ggplot2")
+install.packages("dplyr")
+
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+</code>
+</pre>
+
+										<!--<li><a href="#" class="button">View Project</a></li> -->
+									</ul>
+								</article>
+								<article>
+									<header>
+										<!--<span class="date">April 22, 2017</span>!-->
+										<h3><a href="#">Importing Data to RStudio<br />
+											</h3>
+									</header>
+									<!--<a href="#" class="image aln-center"><img src="images/pic03.jpg" width="444" height= "auto" alt="" /></a>
+									<p> I used Rstudio to create visuals for the Cyclistic Data.</p>
+									<ul class="actions special">-->
+<pre>
+<code>Jan <- read.csv("202101-divvy-tripdata.csv")
+Feb <- read.csv("202102-divvy-tripdata.csv")
+Mar <- read.csv("202103-divvy-tripdata.csv")
+Apr <- read.csv("202104-divvy-tripdata.csv")
+May <- read.csv("202105-divvy-tripdata.csv")
+Jun <- read.csv("202106-divvy-tripdata.csv")
+Jul <- read.csv("202107-divvy-tripdata.csv")
+Aug <- read.csv("202108-divvy-tripdata.csv")
+Sep <- read.csv("202109-divvy-tripdata.csv")
+Oct <- read.csv("202110-divvy-tripdata.csv")
+Nov <- read.csv("202111-divvy-tripdata.csv")
+Dec <- read.csv("202112-divvy-tripdata.csv")
+</code>
+</pre>
+										<!--<li><a href="#" class="button">View Project</a></li>-->
+									</ul>
+								</article>
+								<article>
+									<header>
+										<!--<span class="date">April 18, 2017</span>-->
+										<h3><a href="#">Merging Data into a single dataframe<br />
+											</a></h3>
+									</header>
+									<!--<a href="https://public.tableau.com/views/CyclisticDashboard_16677730091140/UsertypeDashboard?:language=en-US&:display_count=n&:origin=viz_share_link" class="image aln-center"><img src="images/pic04.jpg"width="444" height= "auto" alt="" /></a>
+									<p> Tableau dashboards and visuals on Cyclistic data.</p>
+									<ul class="actions special">-->
+<pre>
+	<code>triprawdata <- rbind(Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec)</code>
+</pre>
+										<!--<li><a href="#" class="button">View Project</a></li>-->
+									</ul>
+								</article>
+								<article>
+									<header>
+										<!--<span class="date">April 14, 2017</span>-->
+										<h3><a href="#">cleaning & preparing data<br />
+										</h3>
+									</header>
+									<!--<a href="#" class="image aln-center"><img src="images/pic05.jpg" width="444" height= "auto"alt="" /></a>
+									<p>Click here to schedule a meeting with me.</p>
+									<ul class="actions special">-->
+<pre>
+	<code>colnames(triprawdata) #column names of data
+nrow(triprawdata) #no. of rows
+ncol(triprawdata) #no. of columns
+sum(is.na(triprawdata)) # sum of NA's in data
+head(triprawdata)   #see first 6 rows of data frame
+str(triprawdata)   #See list of columns and data type
+summary(triprawdata)  #Statistical summary of data</code>
+</pre>
+										<!--<li><a href="#" class="button">Schedule a Meeting</a></li> -->
+									</ul>
+								</article>
+								<article>
+									<header>
+										<!--<<span class="date">April 11, 2017</span>-->
+										<h3><a href="#">Removing N/a's & Making Data Consistent<br />
+										</a></h3>
+									</header>
+									<!--<a href="#" class="image aln-center"><img src="images/pic06.jpg" width="444" height= "auto"alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">-->
+<pre>
+	<code>#Removing Rows with NA
+triprawdata<- na.omit(triprawdata)
+		
+##Making consistent Date formats in started_at
+# Date format is inconsistent some dates are in YYYY-MM-DD format or MM/DD/YYYY
+start<-as.POSIXlt(triprawdata$started_at, tz = "","%m/%d/%Y %H:%M")
+start<- data.frame(start)
+start<- (start[1:nrow(na.omit(start)),])
+start<- data.frame(start)
+			
+start1<-as.POSIXlt(triprawdata$started_at, tz = "","%Y-%m-%d %H:%M")
+start1<- data.frame(start1)
+start1<- (start1[(nrow(start)+1):nrow(start1),])
+start1<-data.frame(start1)
+		
+names(start)<- "start"
+names(start1)<- "start"
+start_time<- (rbind(start,start1))
+triprawdata$started_at <- NULL
+triprawdata['started_at']<- start_time
+		
+##Making consistent Date formats in ended_at
+end<-(as.POSIXlt(triprawdata$ended_at, tz = "","%m/%d/%Y %H:%M"))
+end<- data.frame(end)
+end<- (end[1:nrow(na.omit(end)),])
+end<-data.frame(end)
+		
+end1<-(as.POSIXlt(triprawdata$ended_at, tz = "","%Y-%m-%d %H:%M"))
+end1<- data.frame(end1)
+end1<- (end1[(nrow(end)+1):nrow(end1),])
+end1<-data.frame(end1)
+		
+names(end)<- "end"
+names(end1)<- "end"
+end_time<- (rbind(end,end1))
+triprawdata$ended_at<- NULL
+triprawdata['ended_at']<- end_time</code>
+</pre>
+										<!--<li><a href="#" class="button">Full Story</a></li>-->
+									</ul>
+								</article>
+								<article>
+									<header>
+										<header>
+											<!--<<span class="date">April 11, 2017</span>-->
+											<h3><a href="#">Adding colummn for ride length<br />
+											</a></h3>
+										</header>
+										<!--<a href="#" class="image aln-center"><img src="images/pic06.jpg" width="444" height= "auto"alt="" /></a>
+										<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+										<ul class="actions special">-->
+<pre>
+<code>ride_length<- difftime(end_time[,], start_time[,], units = "mins")
+ride_length<-data.frame(ride_length)
+triprawdata <- cbind(triprawdata,ride_length)</code>
+</pre>
+											<!--<li><a href="#" class="button">Full Story</a></li>-->
+										</ul>
+									</article>
+									<article>
+										<header>
+											<header>
+												<!--<<span class="date">April 11, 2017</span>-->
+												<h3><a href="#">Checking consistency of Ride length & Ride ID<br />
+												</a></h3>
+											</header>
+											<!--<a href="#" class="image aln-center"><img src="images/pic06.jpg" width="444" height= "auto"alt="" /></a>
+											<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+											<ul class="actions special">-->
+<pre>
+	<code>#Some Ride lengths are negative,start time and end time are found interchanged
+clean_data <- triprawdata %>% filter(ride_length>0)
+		
+#Checking duplicate ride id
+sum(duplicated(clean_data$ride_id))</code>
+</pre>
+												<!--<li><a href="#" class="button">Full Story</a></li>-->
+											</ul>
+										</article>
+										<article>
+											<header>
+												<header>
+													<!--<<span class="date">April 11, 2017</span>-->
+													<h3><a href="#">Adding columns for the day of the week into the data frame<br />
+													</a></h3>
+												</header>
+												<!--<a href="#" class="image aln-center"><img src="images/pic06.jpg" width="444" height= "auto"alt="" /></a>
+												<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+												<ul class="actions special">-->
+<pre>
+<code>weekday<- weekdays(clean_data$started_at)
+weekday<-  factor(weekday, levels =c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday")) 
+weekday<- data.frame(weekday)
+clean_data<- cbind(clean_data,weekday)</code>
+</pre>
+													<!--<li><a href="#" class="button">Full Story</a></li>-->
+												</ul>
+											</article>
+											<article>
+												<header>
+										<!--<span class="date">April 7, 2017</span>-->
+										<h3><a href="#">Replacing missing station names in start station and end station names<br />
+										</a></h3>
+									</header>
+									<!--<a href="#" class="image aln-center"><img src="images/pic07.jpg" width="444" height= "auto"alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+	
+									<ul class="actions special">-->
+<pre> 
+<code>start_no_data<- clean_data%>% filter (start_station_name =="")%>% group_by(start_lat,start_lng,start_station_name,member_casual)%>% summarise(n=n())
+
+#writing file to excel for further analysis
+write.csv(start_no_data,"start_no_data.csv",row.names = FALSE)
+
+#filtering top data coordinates and assigning start station name 
+#filtering out in excel top 50 coordinates and finding their station name from our database clean_data
+	
+start_no_data<-read.csv("start_no_data.csv")
+	
+start_data<- clean_data%>% filter (start_station_name !="") %>%group_by(start_lat,start_lng,start_station_name,member_casual)%>% summarise(n=n())
+
+#Merging both to make a data for starting stations with names
+start_data<- data.frame(start_data)
+start_data<- rbind(start_data,start_no_data)
+
+##Replacing missing station names in end station
+end_no_data<- clean_data%>% filter(end_station_name=="")%>% group_by(end_lat,end_lng,end_station_name,member_casual)%>% summarise(n=n())
+end_no_data<- na.omit(end_no_data)  
+
+
+write.csv(end_no_data,"end_no_data.csv",row.names = FALSE)
+#filtering top data cordinates and assigning start station name 
+#filtering out in excel top 25 coordinates and finding their station name from our database
+
+end_no_data<- read.csv("end_no_data.csv")
+
+##Changing Station names (Some station names has been changed over the time)
+end_data_unclean<- clean_data%>% filter(end_station_name!="")%>% group_by(end_lat,end_lng,end_station_name,member_casual)%>% summarise(n=n())
+
+# writing file to excel for further analysis
+write.csv(end_data_unclean,"end_data_unclean.csv",row.names = FALSE)
+
+#changing the names of 6 stations to their new names in excel 
+end_data_unclean<- read.csv("end_data_unclean.csv")
+
+end_data_unclean <- data.frame(end_data_unclean)
+end_data<- rbind(end_data_unclean,end_no_data)</code>
+</pre>
+											</ul>
+										</article>
+										<article>
+											<header>
+												<header>
+													<!--<<span class="date">April 11, 2017</span>-->
+													<h3><a href="#">Ride Analysis<br />
+													</a></h3>
+												</header>
+<pre>
+<code>cat('average duration of rides is : ', mean(clean_data$ride_length), "mins")
+#average duration of rides is :  21.17667 mins
+	
+cat('maximum duration of rides is : ', round(max(clean_data$ride_length)/60/24), "days")
+#maximum duration of rides is :  39 days
+</code>
+</pre>
+												<!--<a href="#" class="image aln-center"><img src="images/pic06.jpg" width="444" height= "auto"alt="" /></a>-->
+												<p>In this part of the Cyclistic data analysis, the code tells us that the average amount of days spent in 2021 was 39 days, and the average ride length was about 21 minutes.</p>
+												<ul class="actions special">
+													<!--<li><a href="#" class="button">Full Story</a></li>-->
+												</ul>
+											</article>
+											<article>
+												<header>
+												</ul>
+											</article>
+											<article>
+												<header>
+													<header>
+														<!--<<span class="date">April 11, 2017</span>-->
+														<h3><a href="#">Comparison in Types of Riders<br />
+														</a></h3>
+<pre>
+<code>clean_data%>% group_by(member_casual)%>% summarise(n=n())%>%
+mutate(percent = n*100/sum(n))		  
+ggplot(data = clean_data,mapping= aes(x= member_casual))+geom_bar() + labs(title="# of Casual Riders v # of Members", x="Type of Rider", y= "Count of Riders")+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE,big.mark = ",", decimal.mark = "."))
+</code>
+</pre>
+													<a href="#" class="image aln-center"><img src="images/Rimages/comparison of ridertypes.jpeg" width="auto" height= "auto"alt="" /></a>
+													<p>Here we see that there are about 50k more members that casual riders. This is a start for questions such as; how do we convert 250k casual users into members? </p>
+													<ul class="actions special">
+														<!--<li><a href="#" class="button">Full Story</a></li>-->
+													</ul>
+												</article>
+												<article>
+													<header>
+													</ul>
+												</article>
+												<article>
+													<header>
+														<header>
+															<!--<<span class="date">April 11, 2017</span>-->
+															<h3><a href="#">Average Ride Duration By type of user<br />
+															</a></h3>
+														</header>
+<pre>
+<code>cat('average duration of rides is : ', mean(clean_data$ride_length), "mins")
+#average duration of rides is :  21.17667 mins
+
+cat('maximum duration of rides is : ', round(max(clean_data$ride_length)/60/24), "days")
+#maximum duration of rides is :  39 days
+
+##Ride behavior of members and casual riders
+bar<-clean_data%>% group_by(member_casual)%>% summarise(avg_ride_length=mean(ride_length))
+bar
+
+ggplot(bar, aes(x = member_casual, y = avg_ride_length, fill =member_casual))+geom_col() +geom_bar(stat="identity")+ labs(title="Avg Ride Duration in Mins Per Usertype", x="Type of Rider", y= "Avg Ride Duration in Mins", fill= "User Type")+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE,big.mark = ",", decimal.mark = "."))
+## # A tibble: 2 x 2
+##   member_casual avg_ride_length
+##   <chr>         <drtn>         
+## 1 casual        28.49893 mins  
+## 2 member        13.06106 mins
+</code>
+</pre>
+														<a href="#" class="image aln-center"><img src="images/Rimages/avg ride duration by usertype.jpeg" width="auto" height= "auto"alt="" /></a>
+														<p>It would appear that casual users are spending more time using the Cyclistic service than actual members. Let's dive deeper into the analysis. </p>
+														<ul class="actions special">
+															<!--<li><a href="#" class="button">Full Story</a></li>-->
+														</ul>
+													</article>
+													<article>
+														<header>
+														</ul>
+													</article>
+													<article>
+														<header>
+															<header>
+																<!--<<span class="date">April 11, 2017</span>-->
+																<h3><a href="#">Type of Bike by Usertype<br />
+																</a></h3>
+															</header>
+<pre>
+<code>#Comparing bikes
+clean_data%>% group_by(rideable_type) %>% summarise(n=n())%>% mutate(percent = n*100/sum(n))
+# A tibble: 3 x 3
+#   rideable_type       n percent
+#   <chr>           <int>   <dbl>
+# 1 classic_bike  2435347   56.5 
+# 2 docked_bike    216447    5.02
+# 3 electric_bike 1659439   38.5
+	
+ggplot(data = clean_data,mapping= aes(x= rideable_type,fill=rideable_type))+geom_bar() + labs(title="Biketype Use: Comparison", x="Type of Bike", y= "Count of Bikes", fill= "Bike Type")+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE,big.mark = ",", decimal.mark = "."))</code>
+</pre>
+															<a href="#" class="image aln-center"><img src="images/RImages/biketype use.jpeg" width="auto" height= "auto"alt="" /></a>
+															<p>Here we can see the most popular type of bike is the classic bike, followed by electric and the docked bike falls way short.</p>
+															<ul class="actions special">
+																<!--<li><a href="#" class="button">Full Story</a></li>-->
+															</ul>
+														</article>
+														<article>
+															<header>
+															</ul>
+														</article>
+														<article>
+															<header>
+																<header>
+																	<!--<<span class="date">April 11, 2017</span>-->
+																	<h3><a href="#">User Biketype Preference<br />
+																	</a></h3>
+																</header>
+<pre>
+<code>##Choice of Bikes by Riders
+	member_type<-clean_data%>% group_by(member_casual,rideable_type) %>% summarise(n=n())%>%
+	  mutate(percent = n*100/sum(n))
+	
+	member_type
+	## # A tibble: 5 x 4
+	## # Groups:   member_casual [2]
+	##   member_casual rideable_type       n percent
+	##   <chr>         <chr>           <int>   <dbl>
+	## 1 casual        classic_bike   952630    49.6
+	## 2 casual        docked_bike    216447    11.3
+	## 3 casual        electric_bike  753149    39.2
+	## 4 member        classic_bike  1482717    62.1
+	## 5 member        electric_bike  906290    37.9
+	
+	ggplot(data = as.data.frame(member_type),mapping= aes(x= member_casual, y=n, fill =rideable_type))+geom_bar(stat = 'identity') + labs(title="User Biketype Preference", x="Type of User", y= "Count of Bikes", fill= "Bike Type")+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE,big.mark = ",", decimal.mark = "."))
+	
+</code>
+</pre>
+																<a href="#" class="image aln-center"><img src="images/RImages/user biketype preference.jpeg" width="auto" height= "auto"alt="" /></a>
+																<p>Cyclistic members are not using docked bikes whatsoever & the electric bike is almost even between casual users and members.</p>
+																<ul class="actions special">
+																	<!--<li><a href="#" class="button">Full Story</a></li>-->
+																</ul>
+															</article>
+															<article>
+																<header>
+																</ul>
+															</article>
+															<article>
+																<header>
+																	<header>
+																		<!--<<span class="date">April 11, 2017</span>-->
+																		<h3><a href="#">Weekly Rides Averages<br />
+																		</a></h3>
+																	</header>
+<pre>
+<code>#Weekday Rides (usage on different days)
+clean_data$weekday<- factor(clean_data$weekday, levels= c("Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"))
+weektable<- clean_data%>% group_by(weekday)%>% summarise(n=n())%>% mutate(percent = n*100/sum(n))
+	
+weektable
+ggplot(data = clean_data,mapping= aes(x= weekday)) +geom_bar() + labs(title="Daily Total: Bike Use", x="Day of the Week", y= "Count of Bikes")+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE))+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE,big.mark = ",", decimal.mark = "."))
+</code>
+</pre>
+																	<a href="#" class="image aln-center"><img src="images/RImages/daily type of bike use.jpeg" width="auto" height= "auto"alt="" /></a>
+																	<p>Taking a look into the weekly use - weekends are the times where the rides are being used the most, especially Saturday. For the most part the week use is pretty leveld off.</p>
+																	<ul class="actions special">
+																		<!--<li><a href="#" class="button">Full Story</a></li>-->
+																	</ul>
+																</article>
+																<article>
+																	<header>
+																		<article>
+																			<header>
+																				<header>
+																					<!--<<span class="date">April 11, 2017</span>-->
+																					<h3><a href="#">Daily Rides of Casual v. Members<br />
+																					</a></h3>
+																				</header>
+<pre>
+<code>##Choice of Bikes by Riders
+member_type<-clean_data%>% group_by(member_casual,rideable_type) %>% summarise(n=n())%>%
+	mutate(percent = n*100/sum(n))
+					
+member_type
+## # A tibble: 5 x 4
+## # Groups:   member_casual [2]
+##   member_casual rideable_type       n percent
+##   <chr>         <chr>           <int>   <dbl>
+## 1 casual        classic_bike   952630    49.6
+## 2 casual        docked_bike    216447    11.3
+## 3 casual        electric_bike  753149    39.2
+## 4 member        classic_bike  1482717    62.1
+## 5 member        electric_bike  906290    37.9
+					
+ggplot(data = as.data.frame(member_type),mapping= aes(x= member_casual, y=n, fill =rideable_type))+geom_bar(stat = 'identity') + labs(title="User Biketype Preference", x="Type of User", y= "Count of Bikes", fill= "Bike Type")+ scale_y_continuous(labels = function(x) format(x, scientific = FALSE,big.mark = ",", decimal.mark = "."))
+</code>
+</pre>
+																				<a href="#" class="image aln-center"><img src="images/RImages/usertype daily rides.jpeg" width="auto" height= "auto"alt="" /></a>
+																				<p>Now, we are looking at sort of users throughout the week. We can see that members are using the service more throughout the week compared to casual riders, who's use spike during the weekend.</p>
+																				<ul class="actions special">
+																					<!--<li><a href="#" class="button">Full Story</a></li>-->
+																				</ul>
+																			</article>
+<ul class="actions special">
+	<li><a href="https://github.com/svaldezruiz/data-portfolio/blob/main/Cyclistic%20Project%20Data%20Cleaning.R" class="button">Full Code Here</a></li><li><a href="https://public.tableau.com/views/CyclisticData_16677739098190/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" class="button">Tableau Visuals Here</a></li> 
+</ul>
+</article>
+<article>
+
+
+						</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<p>Boise, Idaho</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(541) 212-5988</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">svaldezruiz@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<!--<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>-->
+									<li><a href="https://www.linkedin.com/in/svaldezruiz/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									<li><a href="https://www.instagram.com/swamillion/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/svaldezruiz" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<!--<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>-->
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
